@@ -1,7 +1,7 @@
 // ============ KONFIGURASI SUPABASE ============
 // GANTI DENGAN CREDENTIAL SUPABASE ANDA!
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_KEY = 'your-anon-key';
+const SUPABASE_URL = 'https://phpsktqxrrbxswhyvhwd.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBocHNrdHF4cnJieHN3aHl2aHdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0ODkzOTIsImV4cCI6MjA5MTA2NTM5Mn0.EmHvCpqQokmm9CPDLC2p23vJxT_I929C5jAvGdcmRN0';
 
 // Inisialisasi Supabase
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
