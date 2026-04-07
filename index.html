@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sistem Manajemen Loker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-locker"></i> Sistem Manajemen Loker</h1>
+            <p>Total 40 Loker | Data Tersimpan di Cloud</p>
+        </header>
+
+        <!-- Petugas Selector -->
+        <div class="petugas-section">
+            <label><i class="fas fa-user-tie"></i> Pilih Petugas:</label>
+            <select id="petugasSelect">
+                <option value="">-- Pilih Petugas --</option>
+                <option value="Iwan">Iwan</option>
+                <option value="Sigit">Sigit</option>
+                <option value="Broery">Broery</option>
+                <option value="Jean">Jean</option>
+            </select>
+            <span id="selectedPetugasDisplay" class="petugas-display"></span>
+        </div>
+
+        <!-- Navigation Loker (40 tombol) -->
+        <div class="loker-nav" id="lokerNav">
+            <!-- Akan di-generate dengan JavaScript -->
+        </div>
+
+        <!-- Form Data Loker -->
+        <div class="form-container" id="formContainer">
+            <h2 id="lokerTitle">Loker #1</h2>
+            
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Nama Customer:</label>
+                <input type="text" id="namaCustomer" placeholder="Masukkan nama customer" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-tag"></i> PIN Loker (min 4 digit):</label>
+                <input type="text" id="pinLoker" placeholder="Masukkan PIN minimal 4 digit" maxlength="10" autocomplete="off">
+                <small>PIN akan terlihat langsung</small>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-calendar-alt"></i> Tanggal:</label>
+                <input type="text" id="tanggal" readonly>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-check-circle"></i> Status:</label>
+                <select id="status">
+                    <option value="belum">Belum Diambil</option>
+                    <option value="sudah">Sudah Diambil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-camera"></i> Foto Bukti:</label>
+                <input type="file" id="fotoUpload" accept="image/*">
+                <div id="fotoPreview" class="foto-preview"></div>
+            </div>
+
+            <div class="button-group">
+                <button id="saveBtn" class="btn-save"><i class="fas fa-save"></i> Simpan</button>
+                <button id="clearFormBtn" class="btn-clear"><i class="fas fa-eraser"></i> Bersihkan Form</button>
+                <button id="clearAllDataBtn" class="btn-clear-all"><i class="fas fa-trash-alt"></i> Hapus Semua Data Loker Ini</button>
+            </div>
+
+            <div id="message" class="message"></div>
+        </div>
+
+        <!-- Data Display (Ringkasan semua loker) -->
+        <div class="data-display">
+            <h3><i class="fas fa-database"></i> Semua Data Loker</h3>
+            <div id="allLokersData" class="lokers-grid"></div>
+        </div>
+    </div>
+
+    <!-- Modal untuk zoom foto -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
